@@ -1,0 +1,31 @@
+server:
+Connection from ('127.0.0.1', 57661)
+Client disconnected: ('127.0.0.1', 57661)
+Connection from ('127.0.0.1', 57662)
+Client disconnected: ('127.0.0.1', 57662)
+Connection from ('127.0.0.1', 57663)
+Client disconnected: ('127.0.0.1', 57663)
+
+client:
+[00.080090] Client 0 tries to connect.
+        [00.080433] Client 1 tries to connect.
+                [00.080806] Client 2 tries to connect.
+[00.082590] Client 0 connects
+[00.588144] Client 0 sends "Hello".
+[00.588616] Client 0 receives "Hello".
+[01.094206] Client 0 sends "world!".
+[01.094723] Client 0 receives "world!".
+[01.094964] Client 0 disconnects.
+        [01.096636] Client 1 connects
+        [01.600121] Client 1 sends "Hello".
+        [01.600699] Client 1 receives "Hello".
+        [02.104323] Client 1 sends "world!".
+        [02.104826] Client 1 receives "world!".
+        [02.105040] Client 1 disconnects.
+                [02.106847] Client 2 connects
+                [02.608135] Client 2 sends "Hello".
+                [02.608637] Client 2 receives "Hello".
+                [03.114226] Client 2 sends "world!".
+                [03.114748] Client 2 receives "world!".
+                [03.114976] Client 2 disconnects.
+Time taken: 3.0293080806732178
