@@ -82,22 +82,26 @@ int main()
 	Array<int, 5> arr;
 	std::memset(&arr[0], 0, arr.size() * sizeof(int));
 	
-	for (size_t i=0; i<arr.size(); ++i)
-	{
-		arr[i] += i;
-		std::cout << arr[i] << std::endl;
-	}
+	for (auto val: arr)
+		std::cout << val << std::endl;
+
 	// ==== vector examples ====
-//	Vector<Point> vector;
-//	Point p(2.0f);
-//	vector.pushBack(p);
-//	vector.pushBack(Point(4.0f));
-//	printVector(vector);
-//	vector.emplaceBack(1.0f);
-//	vector.popBack();
-//	vector.emplaceBack(3, 4, 5);	
-//	vector.emplaceBack(3.0f);
-//	printVector(vector);
-//	vector.clear();
-//	printVector(vector);
+	Vector<int> v_int;
+	v_int.emplaceBack(1);
+	v_int.emplaceBack(2);
+	v_int.emplaceBack(3);
+	for (auto val: v_int)
+		std::cout << val << std::endl;
+
+	Vector<Point> vector;	
+	Point p(2.0f);
+	vector.pushBack(p);
+	vector.pushBack(Point(4.0f));
+	vector.emplaceBack(1.0f);
+	vector.popBack(); 
+	vector.emplaceBack(3, 4, 5);	
+	vector.emplaceBack(3.0f); 
+	printVector(vector);
+	vector.clear();
+	printVector(vector);
 }

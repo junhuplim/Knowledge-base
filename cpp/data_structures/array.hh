@@ -1,9 +1,13 @@
 #pragma once
 #include <cassert>
+#include "iterator.hh"
 
 template<typename T, size_t S>
 class Array
 {
+	public:
+		using ValueType = T;
+
 	public:
 		Array() {}
 
@@ -21,6 +25,16 @@ class Array
 		}
 
 		const T* data() const { return m_data; }
+
+		Iterator<Array> begin()
+		{
+			return m_data;
+		}
+
+		Iterator<Array> end()
+		{
+			return m_data + S;
+		}
 
 	private:
 		T m_data[S];

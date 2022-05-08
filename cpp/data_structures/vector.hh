@@ -1,8 +1,13 @@
 #pragma once
+#include <cassert>
+#include "iterator.hh"
 
 template<typename T>
 class Vector 
 {
+	public:
+		using ValueType = T;
+
 	public: 
 		Vector() {}
 
@@ -61,14 +66,23 @@ class Vector
 
 		const T& operator[](size_t index) const
 		{
+			assert (index >= 0 and index < m_size);
 			return m_data[index];
+		}
+
+		Iterator<Vector> begin() 
+		{
+			return Iterator<Vector>(m_data);
+		}
+
+		Iterator<Vector> end() 
+		{
+			return Iterator<Vector>(m_data + m_size);
 		}
 
 	private:
 		void realloc(size_t newCapacity) 
 		{
-			std::cout << "Realloc: " << newCapacity << "\n";
-			std::cout << newCapacity * sizeof(T) << "\n";
 			T* newBlock = (T*)::operator new(newCapacity * sizeof(T));
 			if (newCapacity < m_size)
 				m_size = newCapacity;
@@ -85,13 +99,8 @@ class Vector
 		}
 
 	private:
-		T* m_data = new T[0];
+		T* m_data = nullptr;
 		size_t m_size = 0;
 		size_t m_capacity = 0;
 
 };
-
-
-
-
-
